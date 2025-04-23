@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ອາຫານລາວ Review - Lao Food Reviews</title>
+    <style>
+        /* CSS styles remain the same as before */
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            /* font-family: 'Noto Sans Lao', 'Phetsarath OT', sans-serif; */
+            font-family: Phetsarath ot;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #f1f1f1;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(#ffffff, rgba(0, 0, 0, 0.5)), url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #45a049;
+        }
+        
+        /* Food Reviews Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #333;
+        }
+        
+        .food-reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .food-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .food-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .food-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .food-content {
+            padding: 1.5rem;
+        }
+        
+        .food-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .rating {
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .food-description {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        .footer-nav {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .food-reviews {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">ອາຫານລາວ Review</div>
+            <nav>
+                <ul>
+                    <li><a href="#">ໜ້າຫຼັກ</a></li>
+                    <li><a href="#">ອາຫານລາວ</a></li>
+                    <li><a href="#">ຮ້ານອາຫານ</a></li>
+                    <li><a href="#">ກ່ຽວກັບພວກເຮົາ</a></li>
+                    <li><a href="#">ຕິດຕໍ່</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>ຍິນດີຕ້ອນຮັບສູ່ ອາຫານລາວ Review</h1>
+            <p>ຄົ້ນພົບລົດຊາດອາຫານລາວແທ້ໆ ແລະ ຮ້ານອາຫານທີ່ດີທີ່ສຸດໃນປະເທດລາວ. ພວກເຮົາແບ່ງປັນປະສົບການ, ຄຳແນະນຳ ແລະ ເຄັດລັບກ່ຽວກັບອາຫານລາວທີ່ເປັນເອກະລັກ.</p>
+            <a href="https://explore-laos.com/top-10-lao-food-dishes-you-must-try-in-laos/" class="btn">ເບິ່ງ Reviews</a>
+        </div>
+    </section>
+
+    <!-- Food Reviews Section -->
+    <section class="container">
+        <h2 class="section-title">ອາຫານລາວຍອດນິຍົມ</h2>
+        <div class="food-reviews">
+            <!-- Food Card 1 -->
+            <div class="food-card">
+                <img src="Lhaep.jpg" alt="ລາບ" class="food-img">
+                <div class="food-content">
+                    <h3 class="food-title">ລາບໝູ</h3>
+                    <div class="rating">★★★★★</div>
+                    <p class="food-description">ລາບໝູແມ່ນອາຫານລາວທີ່ມີຊື່ສຽງທີ່ສຸດ, ເຮັດຈາກຊີ້ນໝູສັບລະອຽດປະສົມກັບສະໝຸນໄພລາວ ແລະ ເຄື່ອງປຸງລົດຊາດ.</p>
+                    <a href="#" class="btn">ອ່ານເພີ່ມເຕີມ</a>
+                </div>
+            </div>
+            
+            <!-- Food Card 2 -->
+            <div class="food-card">
+                <img src="KhaoNhiew.jpg" alt="ເຂົ້າໜຽວ" class="food-img">
+                <div class="food-content">
+                    <h3 class="food-title">ເຂົ້າໜຽວ</h3>
+                    <div class="rating">★★★★★</div>
+                    <p class="food-description">ເຂົ້າໜຽວແມ່ນອາຫານຫຼັກຂອງຄົນລາວ, ກິນກັບອາຫານລາວເກືອບທຸກຊະນິດ ແລະ ເປັນສ່ວນສຳຄັນຂອງວັດທະນະທຳລາວ.</p>
+                    <a href="#" class="btn">ອ່ານເພີ່ມເຕີມ</a>
+                </div>
+            </div>
+            
+            <!-- Food Card 3 -->
+            <div class="food-card">
+                <img src="Zam-Lao.webp" alt="ຕຳໝາກຫຸ່ງ" class="food-img">
+                <div class="food-content">
+                    <h3 class="food-title">ຕຳໝາກຫຸ່ງ</h3>
+                    <div class="rating">★★★★☆</div>
+                    <p class="food-description">ຕຳໝາກຫຸ່ງລາວມີລົດຊາດເຜັດ, ສົ້ມ, ເຄັມ ແລະ ຫວານ ປະສົມກັນຢ່າງລົງຕົວ, ເປັນອາຫານທີ່ນິຍົມກິນໃນທຸກໆມື້.</p>
+                    <a href="#" class="btn">ອ່ານເພີ່ມເຕີມ</a>
+                </div>
+            </div>
+            
+            <!-- Food Card 4 -->
+            <div class="food-card">
+                <img src="Sai Eea.jpg" alt="ໄສອົວ" class="food-img">
+                <div class="food-content">
+                    <h3 class="food-title">ເອາະຫຼາມ</h3>
+                    <div class="rating">★★★★☆</div>
+                    <p class="food-description">ເອາະຫຼາມແມ່ນແກງລາວດັ້ງເດີມທີ່ເຮັດຈາກຊີ້ນງົວ ຫຼື ຊີ້ນຄວາຍ, ຜັກ ແລະ ສະໝຸນໄພລາວຫຼາຍຊະນິດ.</p>
+                    <a href="#" class="btn">ອ່ານເພີ່ມເຕີມ</a>
+                </div>
+            </div>
+            
+            <!-- Food Card 5 -->
+            <div class="food-card">
+                <img src="Khao pieck sen.jpg" alt="ເຂົ້າປຽກເສັ້ນ" class="food-img">
+                <div class="food-content">
+                    <h3 class="food-title">ເຂົ້າປຽກເສັ້ນ</h3>
+                    <div class="rating">★★★★★</div>
+                    <p class="food-description">ເຂົ້າປຽກເສັ້ນແມ່ນອາຫານລາວທີ່ເຮັດຈາກເສັ້ນທີ່ເຮັດດ້ວຍມື ແລະ ນ້ຳແກງທີ່ມີລົດຊາດຊຸ່ມຊື່ນ.</p>
+                    <a href="#" class="btn">ອ່ານເພີ່ມເຕີມ</a>
+                </div>
+            </div>
+            
+            <!-- Food Card 6 -->
+            <div class="food-card">
+                <img src="MockPar.jpg" alt="ໝົກປາ" class="food-img">
+                <div class="food-content">
+                    <h3 class="food-title">ໝົກປາ</h3>
+                    <div class="rating">★★★★☆</div>
+                    <p class="food-description">ໝົກປາແມ່ນປາທີ່ຫໍ່ດ້ວຍໃບຕອງ ແລະ ປຸງລົດດ້ວຍສະໝຸນໄພລາວ, ນຳໄປນຶ້ງຈົນສຸກຫອມກຸ່ນ.</p>
+                    <a href="#" class="btn">ອ່ານເພີ່ມເຕີມ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+                <a href="#">TikTok</a>
+            </div>
+            <div class="footer-nav">
+                <a href="#">ໜ້າຫຼັກ</a>
+                <a href="#">ອາຫານລາວ</a>
+                <a href="#">ຮ້ານອາຫານ</a>
+                <a href="#">ກ່ຽວກັບພວກເຮົາ</a>
+                <a href="#">ຕິດຕໍ່</a>
+            </div>
+            <p class="copyright">© 2025 ອາຫານລາວ Review. ສະຫງວນລິຂະສິດທັງໝົດ.</p>
+        </div>
+    </footer>
+</body>
+</html>
